@@ -62,6 +62,7 @@ class Machine(object):
         elif r == 3:
             self.clock += 1
             self.msg_qs[self.id_vm1].put(self.clock)
+            self.clock += 1 
             self.msg_qs[self.id_vm2].put(self.clock)
             self.q_size_vm1.value += 1
             self.q_size_vm2.value += 1

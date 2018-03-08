@@ -44,9 +44,18 @@ Tick values: 6, 6, 6
 On this trial, the randomly generated tick/second values all ended up the same. This trial proved the intuitive hypothesis that when all the machines run at the same speed, the logical clocks across all three machines would have few jumps and end the process with close to zero items remaining in the queues. The largest jump value appearing on a queue was 7, and the mode jump value was 1. The queue length remained at 0-1, only rising to 2 once across all three machines.
 
 #### Trial 3:
-Tick values: 1, 4, 5
+Tick values: 1, 4, 6
 
-In this trial, the three machines in concern are
+In this trial, the three machines in concern are spread out fairly evenly along the possible speeds.
+
+| Ticks   | 4               | 6             | 1             |
+|---------|-----------------|---------------|---------------|
+| Min     | 1               | 1             | 1             |
+| Max     | 2               | 15            | 7             |
+| Average | 1.09523809524   | 4.01694915254 | 1.62605042017 |
+| Mode    | 17              | 323           | 161           |
+
+By comparing this trial to trial 1, we see that the jump made by the fastest machine (ticks=6) are greater on average due to the fact that there are now TWO machines slower than it, rather than just one. This indicates that as the number of machines grow, it is likely that the jumps and skew in the logical clock of the fastest machine will increase to a problematic extent.
 
 #### Trial 4:
 Tick values: 2, 2, 4

@@ -80,7 +80,7 @@ Tick values: 1, 1, 6
 | Min     | 1               | 1             | 1             |
 | Max     | 18              | 18            | 2             |
 | Average | 5.62711864407   | 5.23728813559 | 1.11764705882 |
-| Mode    | 215             | 18            | 137           |
+| Mode    | 11              | 15            | 315           |
 
 Max queue lengths: 13, 17, 0
 
@@ -89,8 +89,10 @@ This configuration, when contrasted with Trial 1, reveals that the jumps and lag
 
 ## Conclusions
 
-The experimental
+The experimental analysis confirmed the following intuitive conclusion:
+1) At any given moment in time, the slowest machines will have the most unprocessed items in their queue.
 
-Our experiments suggest serious concerns for machines in a distributed system that process events at rates that differ by orders of magnitudes. As we saw through trials 1, x, and y, a few minutes of running the system resulted in a large backup of messages for slower machines, and the slower machines sending responses to the faster machines that are far out of date, don't adequately respond to events occuring with the faster machines, and potentially contain irrelevant information.
+And also led to the following new/unexpected insight:
+1) In a distributed system, the average and most common jump will be larger on the machines with the most common speed, rather than on the faster machines.
 
-Our experiments suggest that logical clocks can provide complete ordering of events, but
+Our experiments suggest serious concerns for machines in a distributed system where an important machine lags significantly behind the rest in speed, in this case the inconsistency of the logical clock is not made up for by the ability of the machine to process queuries quickly. Thus, a rogue machine is much more harmful if it is a rogue slow machine, than a rogue fast machine. In this case, a few minutes of running the system resulted in a large backup of messages for slower machines, and the slower machines sending responses to the faster machines that are far out of date, don't adequately respond to events occuring with the faster machines, and potentially contain irrelevant information.

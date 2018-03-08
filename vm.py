@@ -108,10 +108,10 @@ class Machine(object):
 
         print self.id, "Queue Lengths:"
         jumps = self.queue_lengths
-        print self.id, "average jump", sum(jumps) / float(len(jumps))
-        print self.id, "max jump", max(jumps)
-        print self.id, "min jump", min(jumps)
-        print self.id, "most common jump", Counter(jumps).most_common(1)
+        print self.id, "average queue length", sum(jumps) / float(len(jumps))
+        print self.id, "max queue length", max(jumps)
+        print self.id, "min queue length", min(jumps)
+        print self.id, "most common queue length", Counter(jumps).most_common(1)
         sys.exit(0)
 
     def run(self, q_size, q_size_vm1, q_size_vm2):

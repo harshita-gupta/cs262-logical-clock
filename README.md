@@ -25,7 +25,7 @@ We run our first set of trials for three machines with tick/second values rangin
 
 #### Trial 1:
 Tick values: 2, 6, 6
-
+In this trial, one machine is significantly slower than the other two.
 ##### Jumps:
 | Ticks   | 2               | 6             | 6             |
 |---------|-----------------|---------------|---------------|
@@ -46,7 +46,7 @@ On this trial, the randomly generated tick/second values all ended up the same. 
 #### Trial 3:
 Tick values: 1, 4, 5
 
-In this trial, one machine was significantly slower than the other two.
+In this trial, the three machines in concern are
 
 #### Trial 4:
 Tick values: 2, 2, 4

@@ -98,7 +98,6 @@ class Machine(object):
         print self.id, "For a machine with " + str(self.ticks) + " ticks,"
         print self.id, "Clock times:"
         t = self.logical_clock_times
-        print t
         jumps = [t[i + 1] - t[i] for i in range(len(t) - 1)]
         print self.id, "average jump", sum(jumps) / float(len(jumps))
         print self.id, "max jump", max(jumps)

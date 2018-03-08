@@ -1,4 +1,4 @@
-# cs262-logical-clock Lab Notebook 
+# CS262 Logical Clock Lab Notebook 
 ## How the model was built and design decisions 
 ### General Considerations 
 We began by writing a Machine() class, which would act as the virtual machine/clock. Before beginning, we considered a few things--such as how the machines would communicate with each other, whether we would need to use sockets, etc. 

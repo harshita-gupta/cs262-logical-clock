@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # cs262-logical-clock Lab Notebook 
 ## How the model was built and design decisions 
 ### General Considerations 
@@ -41,4 +40,3 @@ Tick values: 1, 2, 5
 
 #### Trial 5:
 Tick values: 1, 3, 6
->>>>>>> 5d9b7295af0b96f7d5643ee4abd2a4eb0b0579a3

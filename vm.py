@@ -72,6 +72,7 @@ class Machine(object):
             internal_event = "INTERNAL EVENT\nGlobal time: "\
                 + str(time.time()) + "\nLogical clock time: "\
                 + str(self.clock)
+            self.record_log(internal_event)
 
     def run(self, q_size, q_size_vm1, q_size_vm2):
         self.q_size = q_size

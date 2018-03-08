@@ -90,6 +90,7 @@ class Machine(object):
                 + str(time.time()) + "\nLogical clock time: "\
                 + str(self.clock)
             self.record_log(internal_event)
+<<<<<<< HEAD
             self.queue_lengths.append(self.q_size.value)
             self.logical_clock_times.append(self.clock)
 
@@ -114,6 +115,8 @@ class Machine(object):
         print self.id, "min jump", min(jumps)
         print self.id, "most common jump", Counter(jumps).most_common(1)
         sys.exit(0)
+=======
+>>>>>>> 072b768aada26eeecb3c39ac3858e3a3f428adf9
 
     def run(self, q_size, q_size_vm1, q_size_vm2):
         atexit.register(self.print_info)

@@ -9,7 +9,8 @@ import time
 # initialize variables
 n = 3
 msg_qs = [Queue() for x in xrange(n)]
-ticks = [randint(1, 6) for x in range(n)]
+# ticks = [randint(1, 6) for x in range(n)]
+ticks = [1, 1, 6]
 
 # ticks = [1, 5, 10]
 q0_size = Value('i', 0)

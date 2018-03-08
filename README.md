@@ -87,6 +87,63 @@ Max queue lengths: 13, 17, 0
 This configuration, when contrasted with Trial 1, reveals that the jumps and lag are not determined by the ratio of speeds of machines, as we had earlier postulated, but are determined by the most common speed. In this case, since the fastest machine with ticks=6 was in the minority, the pace for the network was set by the two slower machines(ticks=1). This is why the average jump was lower for the fastest machine in this case, while the average jump was higher for the fast machines in the case of trial 5. This reveals that the highest jumps will occur for the machines with the most common speed setting.
 
 
+### Reducing the probability of internal events
+
+Running the same tick values as in the above experiments, but with a reduced probability of internal events (from .7 to .25), these are the results that we had (excluding trial 2 due to no valuable comparitive information).
+
+#### Trial 1:
+Tick values: 2, 6, 6
+
+##### Jumps:
+| Ticks   | 2               | 6             | 6             |
+|---------|-----------------|---------------|---------------|
+| Min     | 1               | 1             | 1             |
+| Max     | 10              | 3             | 3             |
+| Average | 2.25210084034   | 1.49299719888 | 1.49019607843 |
+| Mode    | 45              | 206           | 200           |
+
+
+#### Trial 3:
+Tick values: 1, 4, 6
+
+In this trial, the three machines in concern are spread out fairly evenly along the possible speeds.
+
+| Ticks   | 4               | 6             | 1             |
+|---------|-----------------|---------------|---------------|
+| Min     | 1               | 1             | 1             |
+| Max     | 6               | 6             | 3             |
+| Average | 2.0             | 1.86974789916 | 1.25280898876 |
+| Mode    | 25              | 108           | 269           |
+
+
+#### Trial 4:
+Tick values: 4, 1, 3
+
+| Ticks   | 4               | 1             | 3             |
+|---------|-----------------|---------------|---------------|
+| Min     | 1               | 1             | 1             |
+| Max     | 2               | 6             | 5             |
+| Average | 1.25210084034   | 2.32203389831 | 1.65363128492 |
+| Mode    | 178             | 24            | 92            |
+
+
+#### Trial 5:
+Tick values: 1, 1, 6
+
+| Ticks   | 1               | 1             | 6             |
+|---------|-----------------|---------------|---------------|
+| Min     | 1               | 1             | 1             |
+| Max     | 10              | 10            | 2             |
+| Average | 2.67796610169   | 2.52542372881 | 1.25280898876 |
+| Mode    | 21              | 24            | 266           |
+
+
+
+In all the above cases, we see that the average, min, max, and mode jumps move closer to the averages of the three machines. The discord between the three machines is thus significantly reduced, likely since keeping the machines in sync is prioritized over carrying out internal operations, and fewer updates occur to the clock of faster machines due to internal events reduced the skew between machines.
+
+The updates to the logical clocks are more constrained by the average speed of the communications between the system components, which are constrained by the speeds of the slower machines.
+
+
 ## Conclusions
 
 The experimental analysis confirmed the following intuitive conclusion:
@@ -94,5 +151,8 @@ The experimental analysis confirmed the following intuitive conclusion:
 
 And also led to the following new/unexpected insight:
 1) In a distributed system, the average and most common jump will be larger on the machines with the most common speed, rather than on the faster machines.
+2) Fewer internal events helped to keep machines with different speeds in sync more, and prevented clock skew.
+
 
 Our experiments suggest serious concerns for machines in a distributed system where an important machine lags significantly behind the rest in speed, in this case the inconsistency of the logical clock is not made up for by the ability of the machine to process queuries quickly. Thus, a rogue machine is much more harmful if it is a rogue slow machine, than a rogue fast machine. In this case, a few minutes of running the system resulted in a large backup of messages for slower machines, and the slower machines sending responses to the faster machines that are far out of date, don't adequately respond to events occuring with the faster machines, and potentially contain irrelevant information.
+

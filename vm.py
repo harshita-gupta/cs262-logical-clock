@@ -56,7 +56,7 @@ class Machine(object):
         return log
 
     def send_msg(self):
-        r = randint(1, 10)
+        r = randint(1, 4)
         if r == 1:
             self.clock += 1
             self.msg_qs[self.id_vm1].put(self.clock)

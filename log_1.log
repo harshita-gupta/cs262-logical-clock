@@ -1,68 +1,75 @@
-Began process at 1520474654.14
+Began process at 1520477036.01
 Ticks: 5
 
 SENT message
-Global time: 1520474654.14
+Global time: 1520477036.01
 Logical clock time: 1
 
 RECEIVED message
-Global time: 1520474654.35
+Global time: 1520477036.42
 Queue length: 0
-Logical clock time: 2
+Logical clock time: 6
+
+RECEIVED message
+Global time: 1520477036.62
+Queue length: 0
+Logical clock time: 7
 
 SENT message
-Global time: 1520474654.95
-Logical clock time: 5
+Global time: 1520477037.02
+Logical clock time: 9
 
 RECEIVED message
-Global time: 1520474655.15
+Global time: 1520477037.22
 Queue length: 0
-Logical clock time: 11
+Logical clock time: 14
 
-RECEIVED message
-Global time: 1520474655.55
-Queue length: 0
+SENT message
+Global time: 1520477037.42
 Logical clock time: 15
 
 RECEIVED message
-Global time: 1520474656.16
+Global time: 1520477037.82
+Queue length: 0
+Logical clock time: 19
+
+RECEIVED message
+Global time: 1520477038.03
 Queue length: 0
 Logical clock time: 21
 
 RECEIVED message
-Global time: 1520474656.96
+Global time: 1520477038.23
+Queue length: 0
+Logical clock time: 23
+
+RECEIVED message
+Global time: 1520477038.63
+Queue length: 1
+Logical clock time: 27
+
+RECEIVED message
+Global time: 1520477038.83
 Queue length: 1
 Logical clock time: 28
 
 RECEIVED message
-Global time: 1520474657.16
+Global time: 1520477039.03
 Queue length: 0
-Logical clock time: 29
-
-SENT message
-Global time: 1520474657.56
-Logical clock time: 31
+Logical clock time: 30
 
 RECEIVED message
-Global time: 1520474657.77
+Global time: 1520477040.04
 Queue length: 0
-Logical clock time: 37
-
-RECEIVED message
-Global time: 1520474658.17
-Queue length: 0
-Logical clock time: 41
-
-SENT message
-Global time: 1520474658.37
 Logical clock time: 42
 
 RECEIVED message
-Global time: 1520474658.57
+Global time: 1520477040.64
 Queue length: 0
-Logical clock time: 45
+Logical clock time: 48
 
-SENT message
-Global time: 1520474658.77
-Logical clock time: 46
+RECEIVED message
+Global time: 1520477040.84
+Queue length: 0
+Logical clock time: 49
 

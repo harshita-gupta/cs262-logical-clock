@@ -1,3 +1,5 @@
+from collections import Counter
+import pickle
 from vm import Machine
 import sys
 from random import randint

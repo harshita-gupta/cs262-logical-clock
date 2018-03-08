@@ -1,7 +1,9 @@
 
 # CS262 Logical Clock Lab Notebook
 ## Usage
-Clone the repo and run: python run.py "log_file_name" where log_file_name is the prefix you want for each of your log files' names (our program will create 3 logs for each machine and name them according to the prefix you choose). 
+Clone the repo and run: python run.py "log_file_name"
+
+where log_file_name is the prefix you want for each of your log files' names (our program will create 3 logs for each machine and name them according to the prefix you choose). 
 
 For example: python run.py "log_trial_1"
 

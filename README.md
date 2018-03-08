@@ -58,13 +58,38 @@ In this trial, the three machines in concern are spread out fairly evenly along 
 By comparing this trial to trial 1, we see that the jump made by the fastest machine (ticks=6) are greater on average due to the fact that there are now TWO machines slower than it, rather than just one. This indicates that as the number of machines grow, it is likely that the jumps and skew in the logical clock of the fastest machine will increase to a problematic extent.
 
 #### Trial 4:
-Tick values: 2, 2, 4
+Tick values: 4, 1, 3
+
+| Ticks   | 4               | 1             | 3             |
+|---------|-----------------|---------------|---------------|
+| Min     | 1               | 1             | 1             |
+| Max     | 2               | 11            | 8             |
+| Average | 1.09663865546   | 3.22033898305 | 1.45810055866 |
+| Mode    | 215             | 18            | 137           |
+
+
+Max queue lengths: 0, 15, 1
+
+This trial shows two faster machines closer in speed with one machine lagging farther behind. We see here that the two faster machines (ticks=4, ticks=3) keep up with the message queue pool, and have similar average and maximum jumps. The cost of having two machines one order of magnitude away from each other appears to not be as serious as any of our other configurations.
 
 #### Trial 5:
-Tick values: 1, 1, 3
+Tick values: 1, 1, 6
+
+| Ticks   | 1               | 1             | 6             |
+|---------|-----------------|---------------|---------------|
+| Min     | 1               | 1             | 1             |
+| Max     | 18              | 18            | 2             |
+| Average | 5.62711864407   | 5.23728813559 | 1.11764705882 |
+| Mode    | 215             | 18            | 137           |
+
+Max queue lengths: 13, 17, 0
+
+This configuration, when contrasted with Trial 1, reveals that the jumps and lag are not determined by the ratio of speeds of machines, as we had earlier postulated, but are determined by the most common speed. In this case, since the fastest machine with ticks=6 was in the minority, the pace for the network was set by the two slower machines(ticks=1). This is why the average jump was lower for the fastest machine in this case, while the average jump was higher for the fast machines in the case of trial 5. This reveals that the highest jumps will occur for the machines with the most common speed setting.
 
 
 ## Conclusions
+
+The experimental
 
 Our experiments suggest serious concerns for machines in a distributed system that process events at rates that differ by orders of magnitudes. As we saw through trials 1, x, and y, a few minutes of running the system resulted in a large backup of messages for slower machines, and the slower machines sending responses to the faster machines that are far out of date, don't adequately respond to events occuring with the faster machines, and potentially contain irrelevant information.
 

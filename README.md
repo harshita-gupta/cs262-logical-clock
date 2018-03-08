@@ -20,16 +20,13 @@ We run our first set of trials for three machines with tick/second values rangin
 #### Trial 1:
 Tick values: 2, 6, 6
 
-| Ticks   |  2 | 6  | 6  |
-|---------|---|---|---|
-| Min     |  0 | 1  | 1 |
-| Max     |  14 | 1  | 3  |
-| Average |  0.0504201680672 | 1.21848739496  | 1.21568627451 |
-| Mode    | 30  |   |   |
-Average jump: 0.0504201680672
-Maxmimum jump:
-Min jump
-mode
+##### Jumps:
+| Ticks   | 2               | 6             | 6             |
+|---------|-----------------|---------------|---------------|
+| Min     | 0               | 1             | 1             |
+| Max     | 14              | 1             | 3             |
+| Average | 0.0504201680672 | 1.21848739496 | 1.21568627451 |
+| Mode    | 30              | 282           | 286           |
 
 
 #### Trial 2:

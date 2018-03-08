@@ -1,5 +1,10 @@
 
 # CS262 Logical Clock Lab Notebook
+## Usage
+Clone the repo and run: python run.py "log_file_name" where log_file_name is the prefix you want for each of your log files' names (our program will create 3 logs for each machine and name them according to the prefix you choose). 
+
+For example: python run.py "log_trial_1"
+
 ## How the model was built and design decisions
 ### General Considerations
 We began by writing a Machine() class, which would act as the virtual machine/clock. Before beginning, we considered a few things--such as how the machines would communicate with each other, whether we would need to use sockets, etc.
@@ -89,7 +94,7 @@ This configuration, when contrasted with Trial 1, reveals that the jumps and lag
 
 ### Reducing the probability of internal events
 
-Running the same tick values as in the above experiments, but with a reduced probability of internal events (from .7 to .25), these are the results that we had (excluding trial 2 due to no valuable comparitive information).
+Running the same tick values as in the above experiments, but with a reduced probability of internal events (from .7 to .25), these are the results that we had (excluding trial 2 due to no valuable comparative information).
 
 #### Trial 1:
 Tick values: 2, 6, 6
@@ -142,6 +147,11 @@ Tick values: 1, 1, 6
 In all the above cases, we see that the average, min, max, and mode jumps move closer to the averages of the three machines. The discord between the three machines is thus significantly reduced, likely since keeping the machines in sync is prioritized over carrying out internal operations, and fewer updates occur to the clock of faster machines due to internal events reduced the skew between machines.
 
 The updates to the logical clocks are more constrained by the average speed of the communications between the system components, which are constrained by the speeds of the slower machines.
+
+###  Smaller variation in the clock cycles 
+Additionally, we experimented with smaller variations in the clock cycles of the machines. We set the number of ticks per second (TPS) to be ~50, which is quite rapid. We did not vary the number of ticks across machines by much--they were all ~50 TPS, give or take 2-3 ticks. We observed that none of the queues grew past 1 or 2 in length, as 50 TPS ensured that they were dequeued almost as quickly as they were enqueued. We also observed that clock times had very small jumps and did not observe notable drift between the 3 different logical clocks. We surmise that since the machines were rapidly communicating with each other, local clock times were updated quickly and constantly, allowing little time for jumps to "accumulate." The constant communication allowed the machines to better synchronize their times, which meant less drift from one machine to another. Indeed, smaller variations in clock cycles at high speeds ensures more reliable timekeeping in a distributed system. 
+
+### Original experiment
 
 
 ## Conclusions

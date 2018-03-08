@@ -107,8 +107,7 @@ class Machine(object):
         print
 
         print self.id, "Queue Lengths:"
-        t = self.queue_lengths
-        jumps = [t[i + 1] - t[i] for i in range(len(t) - 1)]
+        jumps = self.queue_lengths
         print self.id, "average jump", sum(jumps) / float(len(jumps))
         print self.id, "max jump", max(jumps)
         print self.id, "min jump", min(jumps)

@@ -29,11 +29,14 @@ Tick values: 2, 6, 6
 ##### Jumps:
 | Ticks   | 2               | 6             | 6             |
 |---------|-----------------|---------------|---------------|
-| Min     | 0               | 1             | 1             |
-| Max     | 14              | 1             | 3             |
+| Min     | 1               | 1             | 1             |
+| Max     | 14              | 3             | 3             |
 | Average | 0.0504201680672 | 1.21848739496 | 1.21568627451 |
 | Mode    | 30              | 282           | 286           |
 
+Trial one reveals that since the slowest machine does not progress very far into the queue, it updates its logical clock less than the other two machines, as indicated by the average jump of 0.05 compared to the 1.2.
+
+The queue for the faster machines are empty at termination, while the queue for the slowest machine has 80 items in it.
 
 #### Trial 2:
 Tick values: 6, 6, 6
@@ -41,13 +44,19 @@ Tick values: 6, 6, 6
 On this trial, the randomly generated tick/second values all ended up the same. This trial proved the intuitive hypothesis that when all the machines run at the same speed, the logical clocks across all three machines would have few jumps and end the process with close to zero items remaining in the queues. The largest jump value appearing on a queue was 7, and the mode jump value was 1. The queue length remained at 0-1, only rising to 2 once across all three machines.
 
 #### Trial 3:
-Tick values: 2, 2, 4
+Tick values: 1, 4, 5
 
 In this trial, one machine was significantly slower than the other two.
 
 #### Trial 4:
-Tick values: 1, 3, 6
+Tick values: 2, 2, 4
 
 #### Trial 5:
-Tick values: 2, 2, 5
-Tick values: 1, 3, 6
+Tick values: 1, 1, 3
+
+
+## Conclusions
+
+Our experiments suggest serious concerns for machines in a distributed system that process events at rates that differ by orders of magnitudes. As we saw through trials 1, x, and y, a few minutes of running the system resulted in a large backup of messages for slower machines, and the slower machines sending responses to the faster machines that are far out of date, don't adequately respond to events occuring with the faster machines, and potentially contain irrelevant information.
+
+Our experiments suggest that logical clocks can provide complete ordering of events, but

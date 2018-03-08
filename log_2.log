@@ -1,0 +1,79 @@
+Began process at 1520474654.14
+Ticks: 10
+
+SENT message
+Global time: 1520474654.15
+Logical clock time: 1
+
+RECEIVED message
+Global time: 1520474654.25
+Queue length: 1
+Logical clock time: 2
+
+RECEIVED message
+Global time: 1520474654.35
+Queue length: 0
+Logical clock time: 3
+
+SENT message
+Global time: 1520474654.65
+Logical clock time: 6
+
+SENT message
+Global time: 1520474655.06
+Logical clock time: 10
+
+SENT message
+Global time: 1520474655.46
+Logical clock time: 14
+
+SENT message
+Global time: 1520474656.07
+Logical clock time: 20
+
+SENT message
+Global time: 1520474656.77
+Logical clock time: 27
+
+SENT message
+Global time: 1520474656.87
+Logical clock time: 28
+
+SENT message
+Global time: 1520474656.98
+Logical clock time: 29
+
+SENT message
+Global time: 1520474657.28
+Logical clock time: 32
+
+SENT message
+Global time: 1520474657.48
+Logical clock time: 34
+
+RECEIVED message
+Global time: 1520474657.58
+Queue length: 0
+Logical clock time: 35
+
+SENT message
+Global time: 1520474657.68
+Logical clock time: 36
+
+SENT message
+Global time: 1520474657.79
+Logical clock time: 37
+
+SENT message
+Global time: 1520474658.09
+Logical clock time: 40
+
+RECEIVED message
+Global time: 1520474658.39
+Queue length: 0
+Logical clock time: 43
+
+SENT message
+Global time: 1520474658.49
+Logical clock time: 44
+

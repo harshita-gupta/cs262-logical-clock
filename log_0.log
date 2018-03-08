@@ -1,0 +1,27 @@
+Began process at 1520474654.14
+Ticks: 1
+
+SENT message
+Global time: 1520474654.14
+Logical clock time: 1
+
+RECEIVED message
+Global time: 1520474655.15
+Queue length: 1
+Logical clock time: 7
+
+RECEIVED message
+Global time: 1520474656.15
+Queue length: 0
+Logical clock time: 8
+
+RECEIVED message
+Global time: 1520474657.15
+Queue length: 1
+Logical clock time: 28
+
+RECEIVED message
+Global time: 1520474658.15
+Queue length: 5
+Logical clock time: 30
+
